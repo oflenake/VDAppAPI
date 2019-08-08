@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VDAppAPI.Entities\VDAppAPI.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Vision-Dream.ContractsService">
+      <HintPath>..\..\..\..\..\..\vd-library\Vision-Dream.ContractsService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
