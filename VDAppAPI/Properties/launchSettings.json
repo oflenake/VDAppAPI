@@ -12,7 +12,8 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      //"launchUrl": "api/values",
+      "launchUrl": "http://localhost:44301",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +21,7 @@
     "VDAppAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "https://localhost:44302;http://localhost:44301",
       "applicationUrl": "https://localhost:44302;http://localhost:44301",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

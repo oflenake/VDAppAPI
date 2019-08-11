@@ -5,14 +5,14 @@
     * Email:        visiondreamict@gmail.com
     * Website:      www.visiondreamict.wordpress.com
     * 
-    * Copyright (c) 2019 Vision-Dream ICT Solutions. All rights reserved.
-    * ___________________________________________________________________
+    *               (c) 2019 Vision-Dream ICT Solutions. All rights reserved.
+    * _______________________________________________________________________
     * Project:      Vision-Dream .Net Core Web Application API
-    *               Project Targeting .Net Core 2.1.
+    *               Project Targeting .Net Core 2.2.
     * Version:      v1.0.0
-    * File:         LoggerManager.cs
+    * File:         LoggerManagerUtility.cs
     * Date:         2019-01-10
-    * Description:  This file contains the LoggerManager class. 
+    * Description:  This file contains the LoggerManagerUtility class. 
     *               Class execution code.
 */
 #endregion
@@ -22,32 +22,32 @@ using NLog;
 
 namespace VDAppAPI.Logger
 {
-    public class LoggerManager : ILoggerManager
+    public class LoggerManagerUtility : ILoggerManagerUtility
     {
-        private static ILogger logger = LogManager.GetCurrentClassLogger();
+        private static ILogger _LoggerUtility = LogManager.GetCurrentClassLogger();
 
-        public LoggerManager()
+        public LoggerManagerUtility()
         {
         }
 
         public void LogDebug(string message)
         {
-            logger.Debug(message);
+            _LoggerUtility.Debug(message);
         }
 
         public void LogError(string message)
         {
-            logger.Error(message);
+            _LoggerUtility.Error(message);
         }
 
         public void LogInfo(string message)
         {
-            logger.Info(message);
+            _LoggerUtility.Info(message);
         }
 
         public void LogWarn(string message)
         {
-            logger.Warn(message);
+            _LoggerUtility.Warn(message);
         }
     }
 }

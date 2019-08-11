@@ -8,7 +8,7 @@
     *               (c) 2019 Vision-Dream ICT Solutions. All rights reserved.
     * _______________________________________________________________________
     * Project:      Vision-Dream .Net Core Web Application API
-    *               Project Targeting .Net Core 2.1.
+    *               Project Targeting .Net Core 2.2.
     * Version:      v1.0.0
     * File:         Program.cs
     * Date:         2019-01-10
@@ -26,7 +26,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Vision_Dream.AppModels;
+using Vision_Dream.Models;
 using NLog.Web;
 
 namespace VDAppAPI
@@ -40,14 +40,14 @@ namespace VDAppAPI
 
             try
             {
-                loggerWeb.Debug("VDAppAPI starting up and executing main.");
+                loggerWeb.Debug("[DEBUG] - VDAppAPI starting up and executing main.");
                 BuildWebHost(args).Build().Run();
-                loggerWeb.Info("VDAppAPI starting up and executing main.");
+                loggerWeb.Info($"{Startup._AppName} starting up and executing main.");
             }
             catch (Exception ex)
             {
                 // NLog: Catch setup errors
-                loggerWeb.Error(ex, "VDAppAPI stopped because of an exception.");
+                loggerWeb.Error(ex, $"{Startup._AppName} stopped because of an exception.");
                 throw;
             }
             finally
@@ -60,10 +60,10 @@ namespace VDAppAPI
         public static IWebHostBuilder BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .ConfigureLogging(logging =>
+                .ConfigureLogging(loggingWebHost =>
                 {
-                    logging.ClearProviders();
-                    logging.SetMinimumLevel(LogLevel.Trace);
+                    loggingWebHost.ClearProviders();
+                    loggingWebHost.SetMinimumLevel(LogLevel.Trace);
                 })
                 .UseNLog();  // NLog: Setup NLog for dependency injection
     }
